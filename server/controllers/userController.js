@@ -150,7 +150,7 @@ const currentUser = asyncHandler(async (req, res) => {
  */
 const logoutUser = asyncHandler(async (req, res) => {
     const session = req.session
-    const userSession = session.user.id
+    const userSession = session.user._id
     if (userSession) {
         req.session.destroy((err) => {
             if (err) throw err
